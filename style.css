@@ -1,0 +1,608 @@
+/* =========================
+   RESET
+========================= */
+
+:root{
+   --color-primary: #0b3d91;
+   --color-primary-600: #062a5a;
+   --bg: #f8fafc;
+   --surface: #ffffff;
+   --radius: 10px;
+   --gap-lg: 32px;
+   --gap-md: 20px;
+   --container-padding: 8%;
+}
+
+*{
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+   font-family:'Poppins',sans-serif;
+}
+
+body{
+   background:var(--bg);
+   color:var(--color-primary);
+   line-height:1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+   padding:20px var(--container-padding);
+   background:var(--surface);
+   box-shadow:0 2px 15px rgba(0,0,0,0.06);
+   position:sticky;
+   top:0;
+   z-index:1000;
+}
+
+.logo{
+   color:var(--color-primary);
+   font-size:1.8rem;
+   font-weight:700;
+}
+
+.tagline{
+   font-size:0.85rem;
+   color:var(--color-primary);
+}
+
+.nav-links{
+   display:flex;
+   list-style:none;
+   gap:20px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#0b3d91;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+color:#0b3d91;
+}
+
+/* Hamburger (mobile) */
+.hamburger{
+   display:none;
+   width:40px;
+   height:40px;
+   align-items:center;
+   justify-content:center;
+}
+.hamburger span{display:block;height:3px;background:#0b3d91;margin:5px 0;border-radius:3px;transition:all .2s}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+   display:flex;
+   align-items:center;
+   justify-content:space-between;
+   padding:60px var(--container-padding);
+   gap:40px;
+   min-height:360px;
+}
+
+.hero-image img{
+   max-width:460px;
+   width:100%;
+   height:auto;
+   object-fit:contain;
+   border-radius:8px;
+}
+
+.hero-text h1{ font-size:2.1rem; line-height:1.1; }
+.hero-text p{ font-size:1rem; color:#334155; margin-top:12px; }
+
+.btn{
+   display:inline-block;
+   padding:12px 22px;
+   background:var(--color-primary);
+   color:white;
+   text-decoration:none;
+   border:none;
+   border-radius:8px;
+   cursor:pointer;
+   transition:.18s ease;
+   text-align:center;
+}
+.btn:hover{
+   background:var(--color-primary-600);
+   transform:translateY(-3px);
+}
+.btn-outline{
+   background:transparent;
+   border:2px solid var(--color-primary);
+   color:var(--color-primary);
+   margin-left:10px;
+}
+.btn-outline:hover{
+background:#0b3d91;
+color:white;
+}
+/* =========================
+   BUTTONS
+========================= */
+
+/* duplicate legacy button styles removed (site uses deep royal blue .btn rules above) */
+
+/* =========================
+   SEARCH SECTION
+========================= */
+
+.search-section{
+   padding:56px var(--container-padding);
+   text-align:center;
+}
+
+.search-box{
+width:100%;
+max-width:700px;
+padding:15px;
+border-radius:10px;
+border:1px solid rgba(11,61,145,0.18);
+margin-top:20px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+   gap:var(--gap-md);
+   padding:56px var(--container-padding);
+}
+
+.stat-box{
+   background:var(--surface);
+   padding:28px;
+   border-radius:var(--radius);
+   text-align:center;
+   box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+.stat-box h2{
+color:#0b3d91;
+font-size:2.5rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card-container,
+.subjects-grid{
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+   gap:var(--gap-lg);
+   padding:56px var(--container-padding);
+}
+
+.card,
+.subject-card{
+   background:var(--surface);
+   border-radius:var(--radius);
+   overflow:hidden;
+   box-shadow:0 8px 28px rgba(2,6,23,0.06);
+   transition:.18s ease;
+   display:flex;
+   flex-direction:column;
+   padding-bottom:20px;
+   height:100%;
+}
+
+.card:hover,
+.subject-card:hover{
+transform:translateY(-5px);
+}
+
+.card img,
+.subject-card img{
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    max-height:280px;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+@media (max-width:900px){
+   .card img,
+   .subject-card img{ max-height:220px; }
+}
+
+@media (max-width:480px){
+   .card img,
+   .subject-card img{ max-height:160px; }
+}
+
+.card h3,
+.subject-card h3{
+   padding:16px 20px 6px;
+   margin-top:8px;
+}
+
+.card p,
+.subject-card p{
+   padding:0 20px 18px;
+   color:#334155;
+}
+
+.card .btn,
+.subject-card .btn{
+   margin-left:20px;
+}
+
+/* =========================
+   PAGE BANNER
+========================= */
+
+.page-banner{
+background:linear-gradient(135deg,#0b3d91,#062a5a);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.page-banner h1{
+font-size:3rem;
+}
+
+/* Center headings and intro text for Resources and Features sections */
+.resources-preview,
+.features{
+   text-align:center;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+padding:70px 8%;
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.content img{
+width:100%;
+max-width:800px;
+border-radius:15px;
+margin-bottom:30px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-section{
+padding:70px 8%;
+}
+
+form{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:1px solid rgba(11,61,145,0.12);
+border-radius:8px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+padding:80px 8%;
+text-align:center;
+background:#e6eefb;
+}
+
+.cta h2{
+margin-bottom:15px;
+}
+
+/* =========================
+    SPLASH SCREEN
+    ========================= */
+.splash-overlay{
+   position:fixed;
+   inset:0;
+   background:linear-gradient(180deg, rgba(6,42,90,0.95), rgba(2,10,30,0.95));
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   z-index:9999;
+   transition:opacity .45s ease, visibility .45s ease;
+}
+.splash-overlay.splash-hidden{ opacity:0; visibility:hidden; }
+.splash-card{
+   text-align:center;
+   color:#f8fbff;
+   max-width:520px;
+   padding:28px;
+}
+.splash-logo{
+   font-size:2.2rem;
+   margin-bottom:6px;
+   color:#fff;
+}
+.splash-sub{ margin-bottom:18px; color:rgba(255,255,255,0.9); }
+.splash-spinner{
+   width:48px; height:48px; margin:0 auto 14px; border-radius:50%;
+   border:5px solid rgba(255,255,255,0.16); border-top-color:#cfe6ff; animation:spin 1s linear infinite;
+}
+@keyframes spin{ to { transform:rotate(360deg); } }
+.splash-card .btn{ margin-top:6px; }
+
+@media(max-width:600px){
+   .splash-logo{ font-size:1.6rem; }
+   .splash-card{ padding:18px; }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+   background:#062a5a;
+   color:white;
+   padding:0 0 30px;
+   margin-top:50px;
+}
+
+/* Footer grid layout */
+.footer-grid{
+   display:flex;
+   gap:40px;
+   justify-content:space-between;
+   max-width:1100px;
+   margin:0 auto;
+   padding:30px 8%;
+   text-align:left;
+}
+.footer-grid > div{ flex:1; }
+.footer-grid h4{ margin-bottom:12px; color:#e6f0ff; }
+.footer-grid a{ color:#cfe6ff; text-decoration:none; display:block; margin-bottom:8px; transition:color .18s; }
+.footer-grid a:hover{ color:#ffffff; text-decoration:underline; }
+.footer-grid .social a{ display:inline-block; margin-right:10px; color:#cfe6ff }
+
+/* Footer bottom small print centered */
+footer p{ text-align:center; margin-top:18px; color:#94a3b8 }
+
+@media(max-width:900px){
+   .footer-grid{ flex-direction:column; padding:24px; gap:20px; }
+   footer p{ margin-top:12px; }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.navbar{
+   flex-direction:column;
+   gap:15px;
+}
+
+.hamburger{display:flex}
+
+.nav-links{
+   flex-wrap:wrap;
+   justify-content:center;
+   position:absolute;
+   left:0;
+   right:0;
+   top:72px;
+   background: #ffffff;
+   margin:0 auto;
+   padding:20px 8%;
+   gap:12px;
+   display:none;
+   flex-direction:column;
+   box-shadow:0 6px 25px rgba(0,0,0,0.08);
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:10px;
+   transform-origin:top center;
+   transition:transform .35s ease, opacity .35s ease;
+}
+.nav-links.open{display:flex}
+
+.hero{
+   flex-direction:column;
+   text-align:center;
+}
+
+.hero-text h1{
+   font-size:2.2rem;
+}
+
+.page-banner h1{
+   font-size:2rem;
+}
+
+}
+
+/* =========================
+    BACK BUTTON
+========================= */
+
+.back-container{
+   padding:14px 8%;
+   background:transparent;
+}
+
+.back-button{
+   display:inline-flex;
+   align-items:center;
+   gap:8px;
+   padding:10px 14px;
+   background:transparent;
+   border:2px solid #0b3d91;
+   color:#0b3d91;
+   border-radius:10px;
+   font-weight:600;
+   cursor:pointer;
+   transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .12s ease;
+}
+
+.back-button:focus{
+   outline:none;
+   box-shadow:0 4px 18px rgba(11,61,145,.12);
+}
+
+.back-button:hover{
+   transform:translateX(-6px);
+   background:rgba(11,61,145,0.06);
+}
+
+/* =========================
+    PAST PAPERS LAYOUT
+========================= */
+.past-grid{
+   display:grid;
+   grid-template-columns: 280px 180px 1fr;
+   gap:24px;
+   align-items:start;
+}
+
+.past-grid .card{
+   padding:20px;
+   text-align:left;
+}
+
+#subject-list a, #year-list a, #papers-list a{
+   display:block;
+   padding:10px 12px;
+   border-radius:8px;
+   text-decoration:none;
+   color:#062a5a;
+   background:transparent;
+   border:1px solid rgba(11,61,145,0.06);
+   margin-bottom:8px;
+}
+
+#subject-list a:hover, #year-list a:hover, #papers-list a:hover{
+   background:rgba(11,61,145,0.06);
+   transform:translateY(-2px);
+}
+
+#papers-list p{ color:#334155; }
+
+/* make the content columns left-aligned on past papers page */
+.content.past-page{ text-align:left; }
+
+@media(max-width:900px){
+   .past-grid{ grid-template-columns: 1fr; }
+}
+
+/* Modal used for subject explanations */
+.modal-overlay{
+   position:fixed;
+   inset:0;
+   background:rgba(2,6,23,0.55);
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   z-index:2200;
+   padding:20px;
+}
+.modal-card{
+   background:white;
+   border-radius:12px;
+   max-width:780px;
+   width:100%;
+   padding:22px;
+   box-shadow:0 20px 40px rgba(2,6,23,0.3);
+   color:#0b3d91;
+}
+.modal-card h2{ color:#062a5a; }
+.modal-card ul{ margin-top:8px; padding-left:18px; }
+.modal-card li{ margin-bottom:6px; }
+
+/* =========================
+    TOPIC CHECKLIST (alignment fixes)
+    Ensure checkboxes and topic text align horizontally and do not wrap
+========================= */
+#topic-list{
+   display:flex;
+   flex-direction:column;
+   gap:12px;
+}
+
+/* Each row rendered by JS is a direct child div of #topic-list */
+#topic-list > div{
+   display:flex !important;
+   align-items:center !important;
+   justify-content:space-between !important;
+   gap:12px !important;
+   padding:8px 0 !important;
+   border-bottom:1px solid rgba(6,42,90,0.04);
+}
+
+/* Left group (checkbox + label) is the first child div inside the row */
+#topic-list > div > div:first-child{
+   display:flex !important;
+   align-items:center !important;
+   gap:12px !important;
+   flex:1 1 auto !important;
+}
+
+/* Right group (Study More button) should not grow */
+#topic-list > div > div:last-child{
+   flex:0 0 auto !important;
+}
+
+/* Checkbox sizing and spacing */
+#topic-list input[type="checkbox"]{
+   width:20px;
+   height:20px;
+   margin:0;
+   flex:0 0 auto;
+}
+
+/* Topic label: prefer single-line with ellipsis when space is constrained */
+#topic-list label{
+   white-space:nowrap;
+   overflow:hidden;
+   text-overflow:ellipsis;
+   display:inline-block;
+   color:var(--color-primary);
+   font-size:1rem;
+}
+
+/* Provide a bit more vertical spacing for checklist when inside narrow columns */
+@media(max-width:600px){
+   #topic-list > div{ padding:10px 0 !important; }
+   #topic-list label{ white-space:normal; }
+}
+
+/* Ensure static unordered lists used in overview cards align nicely */
+.card ul{ list-style: none; padding-left:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.card ul li{ display:flex; align-items:center; gap:12px; color:#334155; }
