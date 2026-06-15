@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Literature in English | WAEC Vault</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar"><div class="logo-area"><h2 class="logo">WAEC Vault</h2></div></nav>
+  <section class="page-banner"><h1 id="subject-title">Literature in English</h1></section>
+  <div class="back-container"><button class="back-button">← Back</button></div>
+  <section class="content">
+    <div class="card-container">
+      <div class="card"><img id="subject-image" src="images/literature.jpg" alt="Literature" style="width:100%;border-radius:10px;margin-bottom:12px;"><h3>Overview</h3><p>Study of drama, poetry and prose with analysis techniques.</p></div>
+      <div class="card"><h3>Progress</h3><div style="background:#e6eefc;border-radius:8px;padding:6px;"><div id="progress-bar-inner" style="width:0;height:12px;background:#2563eb;border-radius:6px;"></div></div><div style="margin-top:8px;font-weight:600;">Progress: <span id="progress-percent">0%</span></div></div>
+      <div class="card"><h3>Topics</h3><div id="topic-list"></div></div>
+    </div>
+    <div style="padding-top:20px;"><div class="card"><h3>Quiz</h3><form id="quiz-form"></form><div id="quiz-result" style="margin-top:10px;font-weight:700;"></div></div></div>
+  </section>
+  <footer><p>© 2026 WAEC Vault</p></footer>
+  <script src="js/quizzes.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSubjectPage({id:'literature',title:'Literature in English',image:'images/literature.jpg',topics:['Poetry','Prose','Drama','Characters','Themes'],quiz:[{question:'A stanza is part of?',options:['Play','Poem','Equation','Map'],correctIndex:1},{question:'Protagonist means?',options:['Main character','Villain','Author','Reader'],correctIndex:0},{question:'Metaphor compares without?',options:['Like/as','Using','None','Both'],correctIndex:0},{question:'Irony shows?',options:['Opposite meaning','Same meaning','Noise','Color'],correctIndex:0},{question:'Theme is the?',options:['Central idea','Author name','Font','Page number'],correctIndex:0}]});
+  </script>
+  <script>
+  (function(){document.addEventListener('DOMContentLoaded',function(){try{if(document.querySelector('.explain-btn'))return;var img=document.getElementById('subject-image');var overview=img?img.closest('.card'):document.querySelector('.card');if(!overview)return;var btn=document.createElement('button');btn.className='btn btn-outline explain-btn';btn.style.margin='12px 20px';btn.textContent='Study More';btn.addEventListener('click',function(){var titleEl=document.getElementById('subject-title');var title=titleEl?titleEl.textContent:'Subject';var ul=overview.querySelector('ul');var topics=[];if(ul)Array.from(ul.querySelectorAll('li')).forEach(function(li){topics.push(li.textContent.trim());});var p=overview.querySelector('p');var desc=p?p.textContent.trim():'';showSubjectExplanation({title:title,topics:topics,description:desc});});overview.appendChild(btn);}catch(e){}});})();
+  </script>
+</body>
+</html>

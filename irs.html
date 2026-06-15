@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Islamic Religious Studies | WAEC Vault</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar"><div class="logo-area"><h2 class="logo">WAEC Vault</h2></div></nav>
+  <section class="page-banner"><h1 id="subject-title">Islamic Religious Studies (IRS)</h1></section>
+  <div class="back-container"><button class="back-button">← Back</button></div>
+  <section class="content">
+    <div class="card-container">
+      <div class="card"><img id="subject-image" src="images/irs.jpg" alt="IRS" style="width:100%;border-radius:10px;margin-bottom:12px;"><h3>Overview</h3><p>Core teachings, the Quran, Hadith and exam practice materials.</p></div>
+      <div class="card"><h3>Progress</h3><div style="background:#e6eefc;border-radius:8px;padding:6px;"><div id="progress-bar-inner" style="width:0;height:12px;background:#2563eb;border-radius:6px;"></div></div><div style="margin-top:8px;font-weight:600;">Progress: <span id="progress-percent">0%</span></div></div>
+      <div class="card"><h3>Topics</h3><div id="topic-list"></div></div>
+    </div>
+    <div style="padding-top:20px;"><div class="card"><h3>Quiz</h3><form id="quiz-form"></form><div id="quiz-result" style="margin-top:10px;font-weight:700;"></div></div></div>
+  </section>
+    <div class="card" style="margin-top:14px;">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Notes</a></li>
+          <li><a href="past-papers.html?subject=Mathematics">Past Questions</a></li>
+          
+        </ul>
+      </div>
+
+  <footer><p>© 2026 WAEC Vault</p></footer>
+  <script src="js/quizzes.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSubjectPage({id:'irs',title:'Islamic Religious Studies',image:'images/irs.jpg',topics:['Quranic themes','Hadith','Pillars of Islam','History','Ethics'],quiz:[{question:'Five Pillars belong to?',options:['Islam','Math','Music','Science'],correctIndex:0},{question:'Quran is a?',options:['Holy book','Novel','Magazine','Song'],correctIndex:0},{question:'Hadith contains?',options:['Prophet sayings','Recipes','Maps','Poems'],correctIndex:0},{question:'Zakat is?',options:['Charity','Song','Food','Place'],correctIndex:0},{question:'Salah refers to?',options:['Prayer','Festival','Story','Boat'],correctIndex:0}]});
+  </script>
+</body>
+</html>

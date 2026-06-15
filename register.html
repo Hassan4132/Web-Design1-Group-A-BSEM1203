@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Register | WAEC Vault</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo-area">
+	<h2 class="logo">WAEC Vault</h2>
+<p class="tagline">Your Gateway to NPSE, BECE & WASSCE Success</p>
+</div>
+
+</nav>
+
+<section class="page-banner">
+<h1>Create Account</h1>
+</section>
+
+<section class="form-section">
+
+<form id="registrationForm">
+
+<input type="text" id="fullname" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirm-password" placeholder="Re-enter Password">
+
+
+	<button type="submit" class="btn" style="margin-right:8px;" id="register-button">Register</button>
+	<button type="button" class="btn btn-outline" id="login-inline">Login</button>
+
+	</form>
+
+	</section>
+
+	<script src="js/script.js"></script>
+	<script>
+		// Login-inline: show welcome message then go to home
+		document.addEventListener('DOMContentLoaded', function(){
+			const loginBtn = document.getElementById('login-inline');
+			const regForm = document.getElementById('registrationForm');
+			if(loginBtn && regForm){
+					loginBtn.addEventListener('click', function(){
+						// go to a customized login step page where user enters username & password
+						window.location.href = 'login-step2.html';
+					});
+			}
+		});
+	</script>
+
+</body>
+</html>

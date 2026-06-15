@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPSE General Studies | WAEC Vault</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-area">
+      <h2 class="logo">WAEC Vault</h2>
+      <p class="tagline">Your Gateway to BECE &amp; WASSCE Success</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-banner">
+    <h1 id="subject-title">NPSE General Studies</h1>
+  </section>
+
+  <div class="back-container">
+    <button class="back-button" aria-label="Go back">← Back</button>
+  </div>
+
+  <section class="content">
+    <div class="card-container">
+      <div class="card">
+        <img id="subject-image" src="images/waec-logo.jpg" alt="General Studies" style="width:100%;border-radius:10px;margin-bottom:12px;">
+        <h3>Subject Overview</h3>
+        <p>A mix of social studies, science, and health education.</p>
+        <p><strong>Why it matters:</strong> Provides a broad understanding of the world.</p>
+        <h4>Key topics:</h4>
+        <ul>
+          <li>Our Community</li>
+          <li>Basic Health & Hygiene</li>
+          <li>Living Things</li>
+          <li>Weather & Climate</li>
+          <li>Civic Rights & Duties</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Learning Progress</h3>
+        <div style="margin-bottom:8px;">
+          <div style="background:#e6eefc;border-radius:8px;padding:6px;">
+            <div id="progress-bar-inner" style="width:0;height:12px;background:#2563eb;border-radius:6px;"></div>
+          </div>
+          <div style="margin-top:8px;font-weight:600;">Progress: <span id="progress-percent">0%</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Topic Checklist</h3>
+        <div id="topic-list"></div>
+      </div>
+    </div>
+
+    <div style="padding-top:20px;">
+      <div class="card">
+        <h3>Quiz</h3>
+        <form id="quiz-form"></form>
+        <div id="quiz-result" style="margin-top:10px;font-weight:700;"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">NPSE General Studies Notes</a></li>
+          <li><a href="past-papers.html?level=NPSE&subject=General%20Studies">Past Questions</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 WAEC Vault | Empowering Sierra Leone Students</p>
+  </footer>
+
+  <script src="js/quizzes.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSubjectPage({
+      id: 'npse-general-studies',
+      title: 'NPSE General Studies',
+      image: 'images/waec-logo.jpg',
+      topics: ['Our Community','Basic Health & Hygiene','Living Things','Weather & Climate','Civic Rights & Duties'],
+      quiz: [
+        {question:'Which of these is a living thing?', options:['Stone','Tree','Car','Book'], correctIndex:1},
+        {question:'We wash our hands to remove...', options:['Water','Germs','Skin','Air'], correctIndex:1},
+        {question:'The sun gives us...', options:['Light and Heat','Rain','Wind','Snow'], correctIndex:0}
+      ]
+    });
+  </script>
+  <script>
+  (function(){document.addEventListener('DOMContentLoaded',function(){try{if(document.querySelector('.explain-btn'))return;var img=document.getElementById('subject-image');var overview=img?img.closest('.card'):document.querySelector('.card');if(!overview)return;var btn=document.createElement('button');btn.className='btn btn-outline explain-btn';btn.style.margin='12px 20px';btn.textContent='Study More';btn.addEventListener('click',function(){var titleEl=document.getElementById('subject-title');var title=titleEl?titleEl.textContent:'Subject';var ul=overview.querySelector('ul');var topics=[];if(ul)Array.from(ul.querySelectorAll('li')).forEach(function(li){topics.push(li.textContent.trim());});var p=overview.querySelector('p');var desc=p?p.textContent.trim():'';showSubjectExplanation({title:title,topics:topics,description:desc});});overview.appendChild(btn);}catch(e){}});})();
+  </script>
+</body>
+</html>

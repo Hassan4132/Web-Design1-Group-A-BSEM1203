@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics | WAEC Vault</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-area">
+      <h2 class="logo">WAEC Vault</h2>
+      <p class="tagline">Your Gateway to BECE &amp; WASSCE Success</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-banner">
+    <h1 id="subject-title">Physics</h1>
+  </section>
+
+  <div class="back-container">
+    <button class="back-button" aria-label="Go back">← Back</button>
+  </div>
+
+  <section class="content">
+    <div class="card-container">
+      <div class="card">
+        <img id="subject-image" src="images/physics.jpg" alt="Physics" style="width:100%;border-radius:10px;margin-bottom:12px;">
+        <h3>Subject Overview</h3>
+        <p>Physics examines matter, energy and the laws governing the natural world.</p>
+        <p><strong>Why it matters:</strong> Fundamental for engineering, technology and scientific reasoning.</p>
+        <h4>Key topics:</h4>
+        <ul>
+          <li>Mechanics</li>
+          <li>Waves &amp; Optics</li>
+          <li>Electricity &amp; Magnetism</li>
+          <li>Thermodynamics</li>
+          <li>Nuclear Physics basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Learning Progress</h3>
+        <div style="margin-bottom:8px;">
+          <div style="background:#e6eefc;border-radius:8px;padding:6px;">
+            <div id="progress-bar-inner" style="width:0;height:12px;background:#2563eb;border-radius:6px;"></div>
+          </div>
+          <div style="margin-top:8px;font-weight:600;">Progress: <span id="progress-percent">0%</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Topic Checklist</h3>
+        <div id="topic-list"></div>
+      </div>
+    </div>
+
+    <div style="padding-top:20px;">
+      <div class="card">
+        <h3>Quiz</h3>
+        <form id="quiz-form"></form>
+        <div id="quiz-result" style="margin-top:10px;font-weight:700;"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Notes</a></li>
+          <li><a href="past-papers.html?subject=Physics">Past Questions</a></li>
+          <li><a href="#">Revision Guides</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 WAEC Vault | Empowering Sierra Leone Students</p>
+  </footer>
+
+  <script src="js/quizzes.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSubjectPage({
+      id: 'physics',
+      title: 'Physics',
+      image: 'images/physics.jpg',
+      topics: ['Mechanics','Waves & Optics','Electricity & Magnetism','Thermodynamics','Modern Physics'],
+      quiz: [
+        {question:'Unit of force?', options:['Joule','Newton','Pascal','Watt'], correctIndex:1},
+        {question:'Speed of light approx?', options:['3×10^8 m/s','3×10^6 m/s','300 m/s','3 m/s'], correctIndex:0},
+        {question:'Ohm is unit of?', options:['Voltage','Resistance','Current','Power'], correctIndex:1},
+        {question:'Work = Force × ?', options:['Area','Displacement','Time','Velocity'], correctIndex:1},
+        {question:'Acceleration of free fall approx?', options:['9.8 m/s²','8 m/s²','10 km/s²','1 m/s²'], correctIndex:0}
+      ]
+    });
+  </script>
+  <script>
+  (function(){document.addEventListener('DOMContentLoaded',function(){try{if(document.querySelector('.explain-btn'))return;var img=document.getElementById('subject-image');var overview=img?img.closest('.card'):document.querySelector('.card');if(!overview)return;var btn=document.createElement('button');btn.className='btn btn-outline explain-btn';btn.style.margin='12px 20px';btn.textContent='Study More';btn.addEventListener('click',function(){var titleEl=document.getElementById('subject-title');var title=titleEl?titleEl.textContent:'Subject';var ul=overview.querySelector('ul');var topics=[];if(ul)Array.from(ul.querySelectorAll('li')).forEach(function(li){topics.push(li.textContent.trim());});var p=overview.querySelector('p');var desc=p?p.textContent.trim():'';showSubjectExplanation({title:title,topics:topics,description:desc});});overview.appendChild(btn);}catch(e){}});})();
+  </script>
+</body>
+</html>

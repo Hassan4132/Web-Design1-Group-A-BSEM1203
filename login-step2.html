@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | WAEC Vault</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo-area">
+	<h2 class="logo">WAEC Vault</h2>
+<p class="tagline">Your Gateway to NPSE, BECE & WASSCE Success</p>
+</div>
+</nav>
+
+<section class="page-banner">
+<h1>Login</h1>
+</section>
+
+<section class="form-section">
+
+<form id="stepLoginForm">
+
+<input type="text" id="username" placeholder="Username or Email">
+
+<input type="password" id="step-password" placeholder="Password">
+
+<button class="btn" type="submit">Login</button>
+
+</form>
+
+</section>
+
+
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('stepLoginForm');
+    const backBtn = document.querySelector('.back-button');
+    if(backBtn){
+        backBtn.addEventListener('click', function(){
+            window.location.href = 'register.html';
+        });
+    }
+    if(form){
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const user = (document.getElementById('username') && document.getElementById('username').value.trim()) || '';
+            const pass = (document.getElementById('step-password') && document.getElementById('step-password').value) || '';
+            if(user === '' || pass === ''){
+                try{ showMessage(form, 'Please enter username and password.', 'error'); } catch(e){}
+                return;
+            }
+            try{ showMessage(form, 'Logging in... Redirecting to home.', 'success'); } catch(e){}
+            // emulate a short login splash then go to home
+            createAndShowSplash('index.html', 900);
+        });
+    }
+});
+</script>
+
+</body>
+</html>

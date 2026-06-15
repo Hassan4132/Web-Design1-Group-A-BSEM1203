@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Language | WAEC Vault</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-area">
+      <h2 class="logo">WAEC Vault</h2>
+      <p class="tagline">Your Gateway to BECE &amp; WASSCE Success</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-banner">
+    <h1 id="subject-title">English Language</h1>
+  </section>
+
+  <div class="back-container">
+    <button class="back-button" aria-label="Go back">← Back</button>
+  </div>
+
+  <section class="content">
+    <div class="card-container">
+      <div class="card">
+        <img id="subject-image" src="images/english.jpg" alt="English" style="width:100%;border-radius:10px;margin-bottom:12px;">
+        <h3>Subject Overview</h3>
+        <p>Improve comprehension, grammar and essay writing for exams and communication.</p>
+        <p><strong>Why it matters:</strong> Core language skills essential across all subjects and careers.</p>
+        <h4>Key topics:</h4>
+        <ul>
+          <li>Comprehension</li>
+          <li>Grammar &amp; Vocabulary</li>
+          <li>Essay Writing</li>
+          <li>Summary &amp; Composition</li>
+          <li>Literature Basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Learning Progress</h3>
+        <div style="margin-bottom:8px;">
+          <div style="background:#e6eefc;border-radius:8px;padding:6px;">
+            <div id="progress-bar-inner" style="width:0;height:12px;background:#2563eb;border-radius:6px;"></div>
+          </div>
+          <div style="margin-top:8px;font-weight:600;">Progress: <span id="progress-percent">0%</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Topic Checklist</h3>
+        <div id="topic-list"></div>
+      </div>
+    </div>
+
+    <div style="padding-top:20px;">
+      <div class="card">
+        <h3>Quiz</h3>
+        <form id="quiz-form"></form>
+        <div id="quiz-result" style="margin-top:10px;font-weight:700;"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Notes</a></li>
+          <li><a href="past-papers.html?subject=English%20Language">Past Questions</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 WAEC Vault | Empowering Sierra Leone Students</p>
+  </footer>
+
+  <script src="js/quizzes.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    initSubjectPage({
+      id: 'english',
+      title: 'English Language',
+      image: 'images/english.jpg',
+      topics: ['Comprehension','Grammar & Vocabulary','Essay Writing','Summary','Literature Basics'],
+      quiz: [
+        {question:'Choose the correct past tense of "go".', options:['goed','went','gone','goes'], correctIndex:1},
+        {question:'Which is a noun?', options:['Run','Happy','Desk','Quickly'], correctIndex:2},
+        {question:'Synonym of "big"?', options:['Small','Large','Tiny','Short'], correctIndex:1},
+        {question:'A sentence must contain?', options:['A verb','An image','An exclamation','A rhyme'], correctIndex:0},
+        {question:'Plural of "child"?', options:['Childs','Childes','Children','Childrens'], correctIndex:2}
+      ]
+    });
+  </script>
+  <script>
+  (function(){document.addEventListener('DOMContentLoaded',function(){try{if(document.querySelector('.explain-btn'))return;var img=document.getElementById('subject-image');var overview=img?img.closest('.card'):document.querySelector('.card');if(!overview)return;var btn=document.createElement('button');btn.className='btn btn-outline explain-btn';btn.style.margin='12px 20px';btn.textContent='Study More';btn.addEventListener('click',function(){var titleEl=document.getElementById('subject-title');var title=titleEl?titleEl.textContent:'Subject';var ul=overview.querySelector('ul');var topics=[];if(ul)Array.from(ul.querySelectorAll('li')).forEach(function(li){topics.push(li.textContent.trim());});var p=overview.querySelector('p');var desc=p?p.textContent.trim():'';showSubjectExplanation({title:title,topics:topics,description:desc});});overview.appendChild(btn);}catch(e){}});})();
+  </script>
+</body>
+</html>
